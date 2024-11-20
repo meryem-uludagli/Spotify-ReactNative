@@ -17,8 +17,11 @@ import ArtistCard from '../components/ArtistCard';
 import {AlbumContext} from '../context/AlbumContext';
 import AlbumCard from '../components/AlbumCard';
 import Error from '../components/Error';
+import {useNavigation} from '@react-navigation/native';
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
+
   const {artists, loading, error} = useContext(ArtistContext);
   const {
     albums,
@@ -64,7 +67,9 @@ const HomeScreen = () => {
           </View>
 
           <View>
-            <Pressable style={styles.likedSongs}>
+            <Pressable
+              onPress={() => navigation.navigate('Songs')}
+              style={styles.likedSongs}>
               <LinearGradient colors={['#33006F', '#FFFFFF']}>
                 <Pressable
                   style={{
@@ -76,7 +81,7 @@ const HomeScreen = () => {
                   <AntDesign name="heart" color="white" size={24} />
                 </Pressable>
               </LinearGradient>
-              <Text style={styles.likedSongsText}>Liked Songs</Text>
+              <Text style={styles.likedSongsText}>Songs</Text>
             </Pressable>
 
             <Pressable style={styles.likedSongs}>
