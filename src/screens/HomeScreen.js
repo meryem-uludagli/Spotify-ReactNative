@@ -28,7 +28,7 @@ const HomeScreen = () => {
     loading: albumsLoading,
     error: albumsError,
   } = useContext(AlbumContext);
-
+  console.log('albumsLoading', albumsLoading);
   return (
     <LinearGradient colors={['#040306', '#131624']} style={{flex: 1}}>
       {albumsLoading ? (

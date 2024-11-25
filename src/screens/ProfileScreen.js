@@ -37,7 +37,7 @@ const ProfileScreen = () => {
                 style={styles.playlistImage}
               />
               <View>
-                <Text style={styles.playlistName}>{playlist.name}</Text>
+                <Text style={styles.playlistName}>{playlist?.name}</Text>
                 <Text style={styles.playlistFollowers}>
                   {formatFollowers(playlist.followers_count)}
                 </Text>
